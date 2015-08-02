@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Menu>
+	<MenuTitle heading="News">
+		<MenuItem>
+			<Item>BBC News</Item>
+			<Website>http://www.bbc.co.uk/news</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>BBC Sport</Item>
+			<Website>http://www.bbc.co.uk/sport/0/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>BBC Sport Commentaries</Item>
+			<Website>http://www.bbc.co.uk/sport/0/13629860</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Feed Reader</Item>
+			<Website>http://feedreader.com/online/#/reader/category/all/</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Music">
+		<MenuItem>
+			<Item>Dime</Item>
+			<Website>http://www.dimeadozen.org/account-login.php</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Spotify</Item>
+			<Website>https://play.spotify.com/browse</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>You Tube</Item>
+			<Website>http://www.youtube.com/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Dreamscape Radio</Item>
+			<Website>http://www.dreamscaperadio.nl/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>DPRP</Item>
+			<Website>http://www.dprp.net/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Wicked Snakes</Item>
+			<Website>https://www.facebook.com/wickedsnakesuk</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>GG</Item>
+			<Website>https://www.facebook.com/TusskBand</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Banks">
+		<MenuItem>
+			<Item>Santander</Item>
+			<Website>https://retail.santander.co.uk/LOGSUK_NS_ENS/BtoChannelDriver.ssobto?dse_operationName=LOGON</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Co-op Bank</Item>
+			<Website>http://www.co-operativebank.co.uk/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>TSB Classic Gold</Item>
+			<Website>https://online.tsb.co.uk/personal/logon/login.jsp</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Tesco Bank</Item>
+			<Website>https://www.tescobank.com/sss/auth</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Paragon</Item>
+			<Website>https://online.paragonbank.co.uk/OFIS/Login.aspx</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Post Office</Item>
+			<Website>https://www.pofssavecredit.co.uk/POFS-NPS/do/login?methodname=displayPresignin</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Marks and Spencer Bank</Item>
+			<Website>http://bank.marksandspencer.com/banking/internet-banking/overview/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Bank Of Scotland</Item>
+			<Website>https://online.bankofscotland.co.uk/personal/logon/login.jsp</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Nationwide</Item>
+			<Website>https://onlinebanking.nationwide.co.uk/AccessManagement/Login</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Finance">
+		<MenuItem>
+			<Item>Shareview</Item>
+			<Website>https://portfolio.shareview.co.uk/7/Portfolio/Default/en/Anonymous/Pages/Login.aspx</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>RWE pension</Item>
+			<Website>https://epa.towerswatson.com/doc/RWE/login.htm</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Co-op pension</Item>
+			<Website>https://www.legalandgeneral.com/workplacebenefits/microsites/coop/your-pension/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Friends Life pension</Item>
+			<Website/>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Programming">
+		<MenuItem>
+			<Item>Perl Docs</Item>
+			<Website>http://perldoc.perl.org/index.html</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Catalyst Manual Intro</Item>
+			<Website>https://metacpan.org/pod/Catalyst::Manual::Intro</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Catalyst Manual Tutorial</Item>
+			<Website>https://metacpan.org/pod/Catalyst::Manual::Tutorial</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Template Toolkit</Item>
+			<Website>http://www.template-toolkit.org/docs/index.html</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Git Hub</Item>
+			<Website>https://github.com/</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="TV">
+		<MenuItem>
+			<Item>BBC iplayer</Item>
+			<Website>http://www.bbc.co.uk/iplayer</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>ITV Player</Item>
+			<Website>https://www.itv.com/itvplayer/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Sky Sports</Item>
+			<Website>https://skyid.sky.com/signin/sports?successUrl=http%3A%2F%2Fwww1.skysports.com%2Fwatch</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Sky Go</Item>
+			<Website>http://go.sky.com/vod/page/tvListing.do</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Radio Times</Item>
+			<Website>http://www.radiotimes.com/tv/tv-listings</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Channel 5</Item>
+			<Website>http://www.tvguide.co.uk/tv-stream/?ch=channel+5</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Job Sites">
+		<MenuItem>
+			<Item>Sentinel Jobs</Item>
+			<Website>http://jobs.stokesentinel.co.uk/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Indeed</Item>
+			<Website>http://www.indeed.co.uk/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Direct Gov</Item>
+			<Website>https://jobsearch.direct.gov.uk/register.aspx?redirect=http%3a%2f%2fjobsearch.direct.gov.uk%2fhome.aspx</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Other Stuff">
+		<MenuItem>
+			<Item>Lottery</Item>
+			<Website>https://www.national-lottery.co.uk/player/p/results/lotto.ftl</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Facebook</Item>
+			<Website>https://www.facebook.com/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Amazon</Item>
+			<Website>http://www.amazon.co.uk</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Google Maps</Item>
+			<Website>https://www.google.co.uk/maps</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Twitter</Item>
+			<Website>https://twitter.com/following</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>LinkedIn</Item>
+			<Website>https://www.linkedin.com/home</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Google Calendar</Item>
+			<Website>https://www.google.com/calendar/render#h</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Sky Sports Super 6</Item>
+			<Website>https://super6.skysports.com/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Fantasy Football</Item>
+			<Website>http://fantasy.premierleague.com/</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Football Data</Item>
+			<Website>http://www.football-data.co.uk/englandm.php</Website>
+		</MenuItem>
+	</MenuTitle>
+	<MenuTitle heading="Mine">
+		<MenuItem>
+			<Item>My Job Applications</Item>
+			<Website>http://localhost/MyJobApplications/jobApps/home</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Odds Calculator</Item>
+			<Website>http://localhost/OddsCalculator/index.php</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Lottery</Item>
+			<Website>http://localhost/lottery/index.php</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>My Calendar</Item>
+			<Website>http://localhost/Tutorials/mycalendar/display</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Perl My Job Applications</Item>
+			<Website>http://localhost:3000/myjobapplications</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Perl Lottery</Item>
+			<Website>http://localhost:3000/lottery</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Perl Odds Calc</Item>
+			<Website>http://localhost:3000/oddscalc/home</Website>
+		</MenuItem>
+		<MenuItem>
+			<Item>Perl Speed Dial</Item>
+			<Website>http://localhost:3000/myspeeddial/home</Website>
+		</MenuItem>
+	</MenuTitle>
+</Menu>

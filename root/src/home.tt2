@@ -1,0 +1,32 @@
+[% META title = 'My Perl Speed Dial - Home' -%]
+
+<h2>My Perl Speed Dial</h2>
+
+<ul id='tabs'>
+	[% FOREACH group IN data %]
+		<li>
+			<a href="#[% group.heading %]">
+				[% group.heading %]
+			</a>
+		</li>
+	[% END %]
+</ul>
+<br>
+
+[% FOREACH group IN data %]
+	<div class="tabContent" id="[% group.heading %]">
+		<p><h2>[% group.heading %]</h2></p>
+		<ul id="list">
+			[% FOREACH site IN group.sites %]
+				<p><li>
+					<a target="_blank" href="[% site.website %]" >
+						[% site.name %]
+					</a>
+				</li></p>
+			[% END %]
+		</ul>
+	</div>
+[% END %]
+
+<br/>
+<a href="edit" id="admin">Site Admin</a>

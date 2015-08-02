@@ -1,0 +1,14 @@
+
+<table>
+	[% FOREACH group IN data %]
+		[% IF group.heading == param %]
+			[% FOREACH site IN group.sites %]
+				<tr>
+					<td>[% site.name %]</td>
+					<td><a href = "editxml/[% site.name %]">Edit</a></td>
+					<td><a href = "#">Remove</a></td>
+				</tr>
+			[% END %]
+		[% END %]
+	[% END %]
+</table>

@@ -1,0 +1,18 @@
+[% META title = 'My Perl Speed Dial - EditXML' -%]
+
+<form action = "[% c.uri_for (c.controller.action_for ('do_editxml'), [ heading ] ) %] ">
+
+	<label for="item"><h5>Item :</h5></label>
+	<input type="text" name = "item" id="item" value ="[% item %]"/>
+
+	<label for="website"><h5>Website :</h5></label>
+	<input type="text" name = "website" id="website" value = "[% website %]"/>
+
+	<br/><br/>
+
+	<input type="submit" value="Save"/>
+	<a href = "[% c.uri_for (c.controller.action_for ('edit')) %]" class="noline">
+		<input type="button" value="Cancel"/>
+	</a>
+
+</form>

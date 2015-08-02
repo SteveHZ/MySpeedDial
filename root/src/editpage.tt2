@@ -1,0 +1,36 @@
+[% META title = 'My Perl Speed Dial - Edit' -%]
+
+[% INCLUDE 'editpage.js' %]
+
+<h3>Menu Title</h3>
+
+<select id= 'header' onchange = "toggleTable ()">
+	[% FOREACH group IN data %]
+		<option value = "[% group.heading %]">
+			[% group.heading %]
+		</option>
+	[% END %]
+</select>
+
+<br/><br/>
+[% FOREACH group IN data %]
+	<table id = "[% group.heading %]">
+		[% FOREACH site IN group.sites %]
+			<tr>
+				<td>[% site.name %]</td>
+				<td><a href = "editxml/[% group.heading %]/[% site.name %]">Edit</a></td>
+				<td><a href = "remove/[% group.heading %]/[% site.name %]">Remove</a></td>
+			</tr>
+		[% END %]
+	</table>
+[% END %]
+
+<br/><br/>
+
+<a class="noline" onClick = "window.location.href = 'addnew/' + getHeading ();">
+	<input type="button" value="Add New">
+</a>
+
+<a class="noline" href = "home">
+	<input type="button" value="Cancel"/>
+</a>
