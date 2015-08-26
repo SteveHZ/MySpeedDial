@@ -12,6 +12,7 @@ __PACKAGE__->config(
 	],
 	WRAPPER => 'wrapper.tt2',
 	render_die => 1,
+	use_request_uri_for_path => 1,
 );
 
 =head1 NAME

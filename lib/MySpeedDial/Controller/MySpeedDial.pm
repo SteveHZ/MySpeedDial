@@ -29,7 +29,7 @@ sub index :Path {
 	$c->response->redirect ($c->uri_for ($self->action_for ('home')));
 }
 
-sub base :Chained('/') PathPart('oddscalc') CaptureArgs(0) {
+sub base :Chained('/') PathPart('myspeeddial') CaptureArgs(0) {
     my ( $self, $c ) = @_;
 
 	$c->stash ( data => $c->model ('MySpeedDial_Model')
@@ -60,10 +60,11 @@ sub editxml :Chained('base') PathPart('editxml') Args(2) {
 	);
 }
 
-sub do_editxml :Chained('base') PathPart('do_editxml') Args(0) {
-	my ($self, $c) = @_;
+sub do_editxml :Chained('base') PathPart('do_editxml') Args(1) {
+	my ($self, $c, $heading) = @_;
 	
-	my $params = params ($c, qw /item website/);
+	my $params = $c->request->params;
+#	my $params = params ($c, qw /item website/);
 	
 	$c->model ('MySpeedDial_Model')
 			  ->editSite ($params);
@@ -75,7 +76,7 @@ sub do_editxml :Chained('base') PathPart('do_editxml') Args(0) {
 sub addnew :Chained('base') PathPart('addnew') Args(1) {
 	my ($self, $c, $heading) = @_;
 	
-	my $params = params ($c, qw /item website/);
+#	my $params = params ($c, qw /item website/);
 
 	$c->stash ( template => 'addnew.tt2',
 				heading => $heading,
@@ -85,7 +86,8 @@ sub addnew :Chained('base') PathPart('addnew') Args(1) {
 sub do_addnew :Chained('base') PathPart('do_addnew') Args(1) {
 	my ($self, $c, $heading) = @_;
 
-	my $params = params ($c, qw /item website/ );
+	my $params = $c->request->params;
+#	my $params = params ($c, qw /item website/ );
 	
 	$c->model ('MySpeedDial_Model')->addNew ($heading, $params);
 
@@ -102,6 +104,7 @@ sub remove :Chained('base') PathPart('remove') Args(2) {
 	$c->detach ();
 }
 
+=head2
 sub params {
 	my ($c, @params) = @_;
 	my $hash = {};
@@ -109,8 +112,8 @@ sub params {
 	$hash->{$_} = $c->request->params->{$_} foreach (@params);
 	return $hash;
 }
-
 =cut
+
 =encoding utf8
 
 =head1 AUTHOR

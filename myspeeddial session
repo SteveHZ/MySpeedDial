@@ -1,0 +1,17 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="56" xOffset="0" scrollWidth="1160" startPos="1531" endPos="1531" selMode="0" lang="Perl" encoding="-1" filename="C:\Mine\perl\MySpeedDial\lib\MySpeedDial\Controller\MySpeedDial.pm" backupFilePath="" originalFileLastModifTimestamp="1436705364" />
+            <File firstVisibleLine="118" xOffset="0" scrollWidth="1030" startPos="3019" endPos="3019" selMode="0" lang="Perl" encoding="-1" filename="C:\Mine\perl\MySpeedDial\lib\MySpeedDial\Model\MySpeedDial_Model.pm" backupFilePath="" originalFileLastModifTimestamp="1436704988" />
+            <File firstVisibleLine="2" xOffset="0" scrollWidth="660" startPos="627" endPos="627" selMode="0" lang="HTML" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\src\home.tt2" backupFilePath="" originalFileLastModifTimestamp="1436706302" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2432" startPos="338" endPos="338" selMode="0" lang="HTML" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\src\wrapper.tt2" backupFilePath="" originalFileLastModifTimestamp="1436698889" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="740" startPos="80" endPos="71" selMode="0" lang="HTML" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\src\addnew.tt2" backupFilePath="" originalFileLastModifTimestamp="1436705427" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1060" startPos="0" endPos="0" selMode="0" lang="HTML" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\src\editpage.tt2" backupFilePath="C:\Users\steve\AppData\Roaming\Notepad++\backup\editpage.tt2@2015-07-13_213821" originalFileLastModifTimestamp="1436819859" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="740" startPos="84" endPos="84" selMode="0" lang="HTML" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\src\editxmlpage.tt2" backupFilePath="" originalFileLastModifTimestamp="1436705142" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1202" startPos="295" endPos="295" selMode="0" lang="CSS" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\static\css\MySpeedDial.css" backupFilePath="" originalFileLastModifTimestamp="1436017088" />
+            <File firstVisibleLine="28" xOffset="0" scrollWidth="1340" startPos="1188" endPos="1188" selMode="0" lang="XML" encoding="28605" filename="C:\Mine\perl\MySpeedDial\root\static\xml\SpeedDial.xml" backupFilePath="" originalFileLastModifTimestamp="1436706039" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="700" startPos="0" endPos="0" selMode="0" lang="Javascript" encoding="-1" filename="C:\Mine\perl\MySpeedDial\root\static\js\editpage.js" backupFilePath="" originalFileLastModifTimestamp="1436816184" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>
