@@ -18,8 +18,8 @@
 		[% FOREACH site IN group.sites %]
 			<tr>
 				<td>[% site.name %]</td>
-				<td><a href = "editxml/[% group.heading %]/[% site.name %]">Edit</a></td>
-				<td><a href = "remove/[% group.heading %]/[% site.name %]">Remove</a></td>
+				<td><a href = "editxml/[% site.name %]">Edit</a></td>
+				<td><a href = "remove/[% site.name %]">Remove</a></td>
 			</tr>
 		[% END %]
 	</table>

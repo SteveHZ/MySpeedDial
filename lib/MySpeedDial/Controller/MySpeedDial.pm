@@ -13,11 +13,11 @@ MySpeedDial::Controller::MySpeedDial - Catalyst Controller
 Catalyst Controller.
 My Speed Dial
 v1 22/06/15 - 12/07/15
+v1.01 29/08/15
 
 =head1 METHODS
 
 =cut
-
 
 =head2 index
 
@@ -49,25 +49,21 @@ sub edit :Chained('base') PathPart('edit') {
 	$c->stash (	template => 'editpage.tt2' );
 }
 
-sub editxml :Chained('base') PathPart('editxml') Args(2) {
-	my ($self, $c, $heading, $item) = @_;
+sub editxml :Chained('base') PathPart('editxml') Args(1) {
+	my ($self, $c, $item) = @_;
 
 	$c->stash (	template => 'editxmlpage.tt2',
-				heading => $heading,
 				item => $item,
 				website => $c->model ('MySpeedDial_Model')
-							 ->getWebsite ($heading, $item),
+							 ->get_website ($item),
 	);
 }
 
-sub do_editxml :Chained('base') PathPart('do_editxml') Args(1) {
-	my ($self, $c, $heading) = @_;
-	
+sub do_editxml :Chained('base') PathPart('do_editxml') Args(0) {
+	my ($self, $c) = @_;
 	my $params = $c->request->params;
-#	my $params = params ($c, qw /item website/);
 	
-	$c->model ('MySpeedDial_Model')
-			  ->editSite ($params);
+	$c->model ('MySpeedDial_Model')->edit_site ($params);
 
 	$c->response->redirect($c->uri_for('home'));
 	$c->detach ();
@@ -75,8 +71,6 @@ sub do_editxml :Chained('base') PathPart('do_editxml') Args(1) {
 
 sub addnew :Chained('base') PathPart('addnew') Args(1) {
 	my ($self, $c, $heading) = @_;
-	
-#	my $params = params ($c, qw /item website/);
 
 	$c->stash ( template => 'addnew.tt2',
 				heading => $heading,
@@ -85,34 +79,22 @@ sub addnew :Chained('base') PathPart('addnew') Args(1) {
 
 sub do_addnew :Chained('base') PathPart('do_addnew') Args(1) {
 	my ($self, $c, $heading) = @_;
-
 	my $params = $c->request->params;
-#	my $params = params ($c, qw /item website/ );
 	
-	$c->model ('MySpeedDial_Model')->addNew ($heading, $params);
+	$c->model ('MySpeedDial_Model')->add_new ($heading, $params);
 
 	$c->response->redirect($c->uri_for('home'));
 	$c->detach ();
 }
 
-sub remove :Chained('base') PathPart('remove') Args(2) {
-	my ($self, $c, $heading, $site) = @_;
+sub remove :Chained('base') PathPart('remove') Args(1) {
+	my ($self, $c, $site) = @_;
 
-	$c->model ('MySpeedDial_Model')->remove ($heading, $site);
+	$c->model ('MySpeedDial_Model')->remove ($site);
 
 	$c->response->redirect($c->uri_for('home'));
 	$c->detach ();
 }
-
-=head2
-sub params {
-	my ($c, @params) = @_;
-	my $hash = {};
-	
-	$hash->{$_} = $c->request->params->{$_} foreach (@params);
-	return $hash;
-}
-=cut
 
 =encoding utf8
 

@@ -1,6 +1,6 @@
 [% META title = 'My Perl Speed Dial - EditXML' -%]
 
-<form action = "[% c.uri_for (c.controller.action_for ('do_editxml'),[ heading ] ) %] ">
+<form action = "[% c.uri_for (c.controller.action_for ('do_editxml') ) %] ">
 
 	<label for="item"><h5>Item :</h5></label>
 	<input type="text" name = "item" id="item" value ="[% item %]"/>

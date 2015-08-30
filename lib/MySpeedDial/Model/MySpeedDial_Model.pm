@@ -59,6 +59,7 @@ sub load_xml {
 			push (@array, \%group);
 		}
 	}
+	$changed = 0;
 	return \@array;
 }
 
@@ -76,27 +77,15 @@ sub save_xml {
 	$changed = 1;
 }
 
-sub getWebsite {
-	my ($self, $heading, $item) = @_;
-	my $group;
+sub get_website {
+	my ($self, $item) = @_;
 	
-	if (scalar (@array) == 0) {
-		load_xml ();
-	}
-
-	for ($group = 0; $group < scalar (@array); $group++) {
-		last if ($array[$group]{'heading'} eq $heading);
-	}
-
-	my $sites = $array[$group]{'sites'};
-	for my $site (@$sites) {
-		if ($site->{'name'} eq $item ) {
-			return $site->{'website'};
-		}
-	}
+	my @sites = $doc->findnodes ("Menu/MenuTitle/MenuItem/
+									Item [text()= '$item']/../Website/text ()");
+	return $sites[0]->getData();
 }
 
-sub editSite {
+sub edit_site {
 	my ($self, $params) = @_;
 	my $search = $params->{'item'};
 
@@ -110,7 +99,7 @@ sub editSite {
 	save_xml ();
 }
 
-sub addNew {
+sub add_new {
 	my ($self, $heading, $params) = @_;
 	my (@nodes) = $doc->findnodes ("Menu/MenuTitle");
 
@@ -134,7 +123,7 @@ sub addNew {
 }
 
 sub remove {
-	my ($self, $heading, $site) = @_;
+	my ($self, $site) = @_;
 	
 	my @nodes = $doc->findnodes("Menu/MenuTitle/MenuItem[Item/text() = '$site']");
 	
