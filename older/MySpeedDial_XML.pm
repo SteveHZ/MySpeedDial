@@ -15,7 +15,6 @@ My Speed Dial.pm
 v1.00 22/06/15 - 12/07/15
 v1.01 29/08/15
 v1.02 19/12/15 (using URI plugin)
-v1.10 31/12/15 - 01/01/16 (using JSON file)
 
 =head1 METHODS
 
@@ -35,7 +34,7 @@ sub base :Chained('/') PathPart('myspeeddial') CaptureArgs(0) {
     my ( $self, $c ) = @_;
 
 	$c->stash ( data => $c->model ('MySpeedDial_Model')
-						  ->read_json (),
+						  ->load_xml (),
 	)
 }
 				
@@ -51,17 +50,17 @@ sub edit :Chained('base') PathPart('edit') {
 	$c->stash (	template => 'editpage.tt2' );
 }
 
-sub editjson :Chained('base') PathPart('editjson') Args(1) {
+sub editxml :Chained('base') PathPart('editxml') Args(1) {
 	my ($self, $c, $item) = @_;
 
-	$c->stash (	template => 'editjsonpage.tt2',
+	$c->stash (	template => 'editxmlpage.tt2',
 				item => $item,
 				website => $c->model ('MySpeedDial_Model')
 							 ->get_website ($item),
 	);
 }
 
-sub do_editjson :Chained('base') PathPart('do_editjson') Args(0) {
+sub do_editxml :Chained('base') PathPart('do_editxml') Args(0) {
 	my ($self, $c) = @_;
 	my $params = $c->request->params;
 	

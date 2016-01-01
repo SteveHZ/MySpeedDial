@@ -43,10 +43,6 @@
 			<Item>Wicked Snakes</Item>
 			<Website>http://www.ioearth.com/#!news/c20tl</Website>
 		</MenuItem>
-		<MenuItem>
-			<Item>Greater Ghost</Item>
-			<Website>https://www.facebook.com/greaterghost</Website>
-		</MenuItem>
 	</MenuTitle>
 	<MenuTitle heading="Banks">
 		<MenuItem>
@@ -97,7 +93,7 @@
 		</MenuItem>
 		<MenuItem>
 			<Item>Co-op pension</Item>
-			<Website>https://www.legalandgeneral.com/workplacebenefits/microsites/coop/your-pension/</Website>
+			<Website>https://www10.landg.com/SAuthGateWeb/login.html?entryPoint=/MyLandG/</Website>
 		</MenuItem>
 		<MenuItem>
 			<Item>Friends Life pension</Item>
@@ -227,19 +223,19 @@
 		</MenuItem>
 		<MenuItem>
 			<Item>Perl My Job Applications</Item>
-			<Website>http://localhost:3000/myjobapplications</Website>
+			<Website>http://localhost:5000/myjobapplications/myjobapplications</Website>
 		</MenuItem>
 		<MenuItem>
 			<Item>Perl Lottery</Item>
-			<Website>http://localhost:3000/lottery</Website>
+			<Website>http://localhost:5000/lottery/lottery</Website>
 		</MenuItem>
 		<MenuItem>
 			<Item>Perl Odds Calc</Item>
-			<Website>http://localhost:3000/oddscalc/home</Website>
+			<Website>http://localhost:5000/oddscalc/oddscalc/home</Website>
 		</MenuItem>
 		<MenuItem>
 			<Item>Perl Speed Dial</Item>
-			<Website>http://localhost:3000/myspeeddial/home</Website>
+			<Website>http://localhost:5000/myspeeddial/myspeeddial/home</Website>
 		</MenuItem>
 	</MenuTitle>
 </Menu>

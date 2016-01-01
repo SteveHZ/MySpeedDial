@@ -3,21 +3,21 @@
 <h2>My Perl Speed Dial</h2>
 
 <ul id='tabs'>
-	[% FOREACH heading IN data.headings %]
+	[% FOREACH group IN data %]
 		<li>
-			<a href="#[% heading %]">
-				[% heading %]
+			<a href="#[% group.heading %]">
+				[% group.heading %]
 			</a>
 		</li>
 	[% END %]
 </ul>
 <br>
 
-[% FOREACH group IN data.data %]
-	<div class="tabContent" id="[% group.key %]">
-		<p><h2>[% group.key %]</h2></p>
+[% FOREACH group IN data %]
+	<div class="tabContent" id="[% group.heading %]">
+		<p><h2>[% group.heading %]</h2></p>
 		<ul id="list">
-			[% FOREACH site IN group.value %]
+			[% FOREACH site IN group.sites %]
 				<p><li>
 					<a target="_blank" href="[% site.website %]" >
 						[% site.name %]
@@ -30,3 +30,4 @@
 
 <br/>
 <a href="[% c.uri(".edit") %]" id="admin">Site Admin</a>
+

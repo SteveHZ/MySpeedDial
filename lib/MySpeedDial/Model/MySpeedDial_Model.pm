@@ -2,8 +2,7 @@ package MySpeedDial::Model::MySpeedDial_Model;
 use Moose;
 use namespace::autoclean;
 
-use XML::LibXML;
-use XML::LibXML::PrettyPrint;
+use JSON;
 
 extends 'Catalyst::Model';
 
@@ -14,8 +13,9 @@ MySpeedDial::Model::MySpeedDial_Model - Catalyst Model
 =head1 DESCRIPTION
 
 Catalyst Model.
-MySpeedDial_Model
-05/07/15 - 12/07/15
+MySpeedDial_Model.pm
+v1.00 05/07/15 - 12/07/15
+v1.10 31/12/15 - 01/01/16
 
 =encoding utf8
 
@@ -30,107 +30,92 @@ it under the same terms as Perl itself.
 
 =cut
 
-my @array = ();
-my $doc;
-my $changed = 0;
+my $speed_dial;
+my $json_file = 'root/static/json/SpeedDial.json';
 
-sub load_xml {
-	if (scalar (@array) == 0 || $changed) {
-		$doc = XML::LibXML->load_xml ( location => 'root/static/xml/SpeedDial.xml') 
-				or die ('Unable to find SpeedDial.xml file');
 
-		@array = ();
-		for my $menuTitle ( $doc->findnodes('/Menu/MenuTitle') ) {
-			my %group = ();
-			my @sites = ();
+sub read_json {
+    local $/; # end of record character
 
-			my @temp = $menuTitle->getAttributes();
-			$group{'heading'} = $temp[0]->getValue();
+    open (my $fh,'<', $json_file) or die "\n\n Can't open file !!!";
+    my $json_text = <$fh>;
+    close $fh;
 
-			for my $menuItem ( $menuTitle->getChildnodes ) {
-				my %site = ();
-				if ( $menuItem->nodeType() == XML_ELEMENT_NODE ) { # 1
-					$site{'name'} = $menuItem->findvalue ('Item');
-					$site{'website'} = $menuItem->findvalue ('Website');
-					push (@sites, \%site);
-				}
-			}
-			$group{'sites'} = \@sites;
-			push (@array, \%group);
-		}
-	}
-	$changed = 0;
-	return \@array;
+	$speed_dial = decode_json ($json_text);
+	return $speed_dial;
 }
 
-sub save_xml {
-	my $pp = XML::LibXML::PrettyPrint->new (
-		element=> {
-			compact => [ qw/Item Website/ ]
-		}
-	);
-	$pp->pretty_print ($doc); # modified in-place
+sub write_json {
+    my ($self, $data) = @_;
 
-	open my $out,'>','root/static/xml/SpeedDial.xml';
-	$doc->toFH ($out);
+    my $json = JSON->new;
+    my $pretty_print = $json->pretty->encode( $speed_dial );
 
-	$changed = 1;
+    open (my $fh,'>', $json_file);
+    print $fh $pretty_print;
+    close $fh;
 }
 
 sub get_website {
-	my ($self, $item) = @_;
-	
-	my @sites = $doc->findnodes ("Menu/MenuTitle/MenuItem/
-									Item [text()= '$item']/../Website/text ()");
-	return $sites[0]->getData();
+	my ($self, $search) = @_;
+    my (@headings) = @{ $speed_dial->{headings} };
+
+    for (@headings) {
+        my @array = @{ $speed_dial->{data}->{$_} };
+        for my $site (@array) {
+			return $site->{website} if $site->{name} eq $search;
+        }
+    }
 }
 
 sub edit_site {
 	my ($self, $params) = @_;
 	my $search = $params->{'item'};
+    my (@headings) = @{ $speed_dial->{headings} };
 
-	my (@nodes) = $doc->findnodes ("Menu/MenuTitle/MenuItem/
-									Item [text()= '$search']/../Website/text ()");
-	
-	for my $node(@nodes) {
-		$node->removeChildNodes();
-		$node->setData ($params->{'website'});
-	}
-	save_xml ();
+    for (@headings) {
+        my @array = @{ $speed_dial->{data}->{$_} };
+        for my $site (@array) {
+			$site->{website} = $params->{'website'} if $site->{name} eq $search;
+        }
+    }
+
+	write_json ($speed_dial);
 }
 
 sub add_new {
-	my ($self, $heading, $params) = @_;
-	my (@nodes) = $doc->findnodes ("Menu/MenuTitle");
+	my ($self,$heading, $params) = @_;
 
-	for my $node(@nodes) {
-		if ($node->getAttribute('heading') eq $heading) {
-			my $menuItem_node = $doc->createElement("MenuItem");
-
-			my $item_node = $doc->createElement("Item");
-			$item_node->appendText($params->{'item'});
-
-			my $website_node = $doc->createElement("Website");
-			$website_node->appendText($params->{'website'});
-
-			$menuItem_node->addChild($item_node);
-			$menuItem_node->addChild($website_node);
-
-			$node->addChild($menuItem_node);
-		}
-	}
-	save_xml ();
+	my $site = {
+		"name" => $params->{'item'},
+		"website" => $params->{'website'},
+	};
+	
+	my $array = \@{ $speed_dial->{data}->{$heading} };
+	push (@$array, $site);
+    
+	write_json ($speed_dial);
 }
 
 sub remove {
-	my ($self, $site) = @_;
+	my ($self, $search) = @_;
+	my $count;
+    my (@headings) = @{ $speed_dial->{headings} };
 	
-	my @nodes = $doc->findnodes("Menu/MenuTitle/MenuItem[Item/text() = '$site']");
+    LOOP:
+	for (@headings) {
+        my $array = \@{ $speed_dial->{data}->{$_} };
+		$count = 0;
+        for my $site (@$array) {
+			if ($site->{name} eq $search) {
+				splice (@$array, $count, 1);
+				last LOOP;
+			}
+			$count++;
+        }
+    }
 	
-	for my $node (@nodes) {
-		$node->unbindNode;
-	}
-	save_xml ();
+	write_json ($speed_dial);
 }
 
 __PACKAGE__->meta->make_immutable;

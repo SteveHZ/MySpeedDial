@@ -7,6 +7,7 @@
 	function toggleTable () {
 		var selected = document.getElementById("header").value;
 		var tables = document.getElementsByTagName("table");
+
 		for (var i = 0;i < tables.length; i++) {
 			var tableid = tables[i].getAttribute("id"); 
 			if (tableid == selected) {

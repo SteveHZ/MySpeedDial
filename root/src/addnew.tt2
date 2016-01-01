@@ -13,7 +13,7 @@
 	<br/><br/>
 
 	<input type="submit" value="Save"/>
-	<a href = "[% c.uri_for (c.controller.action_for ('edit')) %]" class="noline">
+	<a href="[% c.uri(".edit") %]" class="noline">
 		<input type="button" value="Cancel"/>
 	</a>
 
