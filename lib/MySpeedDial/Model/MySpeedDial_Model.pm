@@ -2,7 +2,7 @@ package MySpeedDial::Model::MySpeedDial_Model;
 use Moose;
 use namespace::autoclean;
 
-use JSON;
+use MyJSON qw (read_json write_json);
 
 extends 'Catalyst::Model';
 
@@ -15,7 +15,7 @@ MySpeedDial::Model::MySpeedDial_Model - Catalyst Model
 Catalyst Model.
 MySpeedDial_Model.pm
 v1.00 05/07/15 - 12/07/15
-v1.10 31/12/15 - 01/01/16
+v1.10 31/12/15 - 08/01/16
 
 =encoding utf8
 
@@ -31,40 +31,22 @@ it under the same terms as Perl itself.
 =cut
 
 my $speed_dial;
-my $json_file = 'root/static/json/SpeedDial.json';
+my $json_file = 'C://Apache24/Apache24/htdocs/MySpeedDial/SpeedDial.json';
 
+#FOR TESTING ONLY :
+#my $json_file = '../root/static/json/SpeedDial.json';
+#my $json_file = 'myspeeddial/root/static/json/SpeedDial.json';
 
-sub read_json {
-    local $/; # end of record character
-
-    open (my $fh,'<', $json_file) or die "\n\n Can't open file !!!";
-    my $json_text = <$fh>;
-    close $fh;
-
-	$speed_dial = decode_json ($json_text);
-	return $speed_dial;
-}
-
-sub write_json {
-    my ($self, $data) = @_;
-
-    my $json = JSON->new;
-    my $pretty_print = $json->pretty->encode( $speed_dial );
-
-    open (my $fh,'>', $json_file);
-    print $fh $pretty_print;
-    close $fh;
+sub get_data {
+	return $speed_dial = read_json ($json_file);
 }
 
 sub get_website {
-	my ($self, $search) = @_;
-    my (@headings) = @{ $speed_dial->{headings} };
+	my ($self, $heading, $search) = @_;
+	my $array = \@{ $speed_dial->{data}->{$heading} };
 
-    for (@headings) {
-        my @array = @{ $speed_dial->{data}->{$_} };
-        for my $site (@array) {
-			return $site->{website} if $site->{name} eq $search;
-        }
+	for my $site (@$array) {
+		return $site->{website} if $site->{name} eq $search;
     }
 }
 
@@ -74,17 +56,17 @@ sub edit_site {
     my (@headings) = @{ $speed_dial->{headings} };
 
     for (@headings) {
-        my @array = @{ $speed_dial->{data}->{$_} };
-        for my $site (@array) {
-			$site->{website} = $params->{'website'} if $site->{name} eq $search;
+        my $array = \@{ $speed_dial->{data}->{$_} };
+        for my $site (@$array) {
+			$site->{website} = $params->{website} if $site->{name} eq $search;
         }
     }
 
-	write_json ($speed_dial);
+	write_json ($json_file, $speed_dial);
 }
 
 sub add_new {
-	my ($self,$heading, $params) = @_;
+	my ($self, $heading, $params) = @_;
 
 	my $site = {
 		"name" => $params->{'item'},
@@ -94,29 +76,35 @@ sub add_new {
 	my $array = \@{ $speed_dial->{data}->{$heading} };
 	push (@$array, $site);
     
-	write_json ($speed_dial);
+	write_json ($json_file, $speed_dial);
 }
 
 sub remove {
-	my ($self, $search) = @_;
-	my $count;
-    my (@headings) = @{ $speed_dial->{headings} };
+	my ($self, $heading, $search) = @_;
+	my $array = \@{ $speed_dial->{data}->{$heading} };
+	my $count = 0;
 	
     LOOP:
-	for (@headings) {
-        my $array = \@{ $speed_dial->{data}->{$_} };
-		$count = 0;
-        for my $site (@$array) {
-			if ($site->{name} eq $search) {
-				splice (@$array, $count, 1);
-				last LOOP;
-			}
-			$count++;
-        }
+	for my $site (@$array) {
+		if ($site->{name} eq $search) {
+			splice (@$array, $count, 1);
+			last LOOP;
+		}
+		$count++;
     }
 	
-	write_json ($speed_dial);
+	write_json ($json_file, $speed_dial);
 }
+
+sub add_new_heading {
+	my ($self, $name) = @_;
+	
+	push ( @{ $speed_dial->{headings} }, $name);
+	$speed_dial->{data}->{$name} = ();
+
+	write_json ($json_file, $speed_dial);
+}	
+# 	to remove key from hash for remove_heading, use either undef or delete
 
 __PACKAGE__->meta->make_immutable;
 

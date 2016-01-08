@@ -15,7 +15,7 @@ My Speed Dial.pm
 v1.00 22/06/15 - 12/07/15
 v1.01 29/08/15
 v1.02 19/12/15 (using URI plugin)
-v1.10 31/12/15 - 01/01/16 (using JSON file)
+v1.10 31/12/15 - 08/01/16 (using JSON file)
 
 =head1 METHODS
 
@@ -35,7 +35,7 @@ sub base :Chained('/') PathPart('myspeeddial') CaptureArgs(0) {
     my ( $self, $c ) = @_;
 
 	$c->stash ( data => $c->model ('MySpeedDial_Model')
-						  ->read_json (),
+						  ->get_data (),
 	)
 }
 				
@@ -51,17 +51,17 @@ sub edit :Chained('base') PathPart('edit') {
 	$c->stash (	template => 'editpage.tt2' );
 }
 
-sub editjson :Chained('base') PathPart('editjson') Args(1) {
-	my ($self, $c, $item) = @_;
+sub editjson :Path('editjson') Args(2) {
+	my ($self, $c, $heading, $item) = @_;
 
 	$c->stash (	template => 'editjsonpage.tt2',
 				item => $item,
 				website => $c->model ('MySpeedDial_Model')
-							 ->get_website ($item),
+							 ->get_website ($heading, $item),
 	);
 }
 
-sub do_editjson :Chained('base') PathPart('do_editjson') Args(0) {
+sub do_editjson :Path('do_editjson') Args(0) {
 	my ($self, $c) = @_;
 	my $params = $c->request->params;
 	
@@ -71,7 +71,7 @@ sub do_editjson :Chained('base') PathPart('do_editjson') Args(0) {
 	$c->detach ();
 }
 
-sub addnew :Chained('base') PathPart('addnew') Args(1) {
+sub addnew :Path('addnew') Args(1) {
 	my ($self, $c, $heading) = @_;
 
 	$c->stash ( template => 'addnew.tt2',
@@ -79,7 +79,7 @@ sub addnew :Chained('base') PathPart('addnew') Args(1) {
 	);
 }
 
-sub do_addnew :Chained('base') PathPart('do_addnew') Args(1) {
+sub do_addnew :Path('do_addnew') Args(1) {
 	my ($self, $c, $heading) = @_;
 	my $params = $c->request->params;
 	
@@ -89,14 +89,30 @@ sub do_addnew :Chained('base') PathPart('do_addnew') Args(1) {
 	$c->detach ();
 }
 
-sub remove :Chained('base') PathPart('remove') Args(1) {
-	my ($self, $c, $site) = @_;
+sub remove :Path('remove') Args(2) {
+	my ($self, $c, $heading, $site) = @_;
 
-	$c->model ('MySpeedDial_Model')->remove ($site);
+	$c->model ('MySpeedDial_Model')->remove ($heading, $site);
 
 	$c->response->redirect ($c->uri("MySpeedDial.home"));
 	$c->detach ();
 }
+
+sub add_new_heading :Path('add_new_heading') Args(0){
+	my ($self, $c) = @_;
+	
+	$c->stash (	template => 'add_heading.tt2' );
+}
+
+sub do_add_heading :Path('do_add_heading') Args(0){
+	my ($self, $c) = @_;
+	my $new_heading = $c->request->params->{heading};
+
+	$c->model ('MySpeedDial_Model')->add_new_heading ($new_heading);
+	$c->response->redirect ($c->uri("MySpeedDial.home"));
+	$c->detach ();
+}
+
 
 =encoding utf8
 

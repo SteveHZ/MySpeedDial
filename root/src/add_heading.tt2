@@ -1,0 +1,15 @@
+[% META title = 'My Perl Speed Dial - Add Heading' -%]
+
+<form action = "[% c.uri_for (c.controller.action_for ('do_add_heading') ) %] ">
+
+	<label for="heading"><h5>New Heading :</h5></label>
+	<input type="text" name = "heading" id="heading value ="[% heading %]"/>
+
+	<br/><br/>
+
+	<input type="submit" value="Save"/>
+	<a href="[% c.uri(".edit") %]" class="noline">
+		<input type="button" value="Cancel"/>
+	</a>
+
+</form>
