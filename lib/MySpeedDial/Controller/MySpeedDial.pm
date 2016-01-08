@@ -55,6 +55,7 @@ sub editjson :Path('editjson') Args(2) {
 	my ($self, $c, $heading, $item) = @_;
 
 	$c->stash (	template => 'editjsonpage.tt2',
+				heading => $heading,
 				item => $item,
 				website => $c->model ('MySpeedDial_Model')
 							 ->get_website ($heading, $item),
@@ -64,7 +65,7 @@ sub editjson :Path('editjson') Args(2) {
 sub do_editjson :Path('do_editjson') Args(0) {
 	my ($self, $c) = @_;
 	my $params = $c->request->params;
-	
+
 	$c->model ('MySpeedDial_Model')->edit_site ($params);
 
 	$c->response->redirect ($c->uri("MySpeedDial.home"));

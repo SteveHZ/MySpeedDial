@@ -8,150 +8,21 @@
       "TV",
       "Job Sites",
       "Other Stuff",
-      "Mine",
-      "bollox"
-   ],
+      "Mine"
+	],
    "data" : {
-      "Programming" : [
+      "Job Sites" : [
          {
-            "website" : "http://perldoc.perl.org/index.html",
-            "name" : "Perl Docs"
+            "website" : "http://jobs.stokesentinel.co.uk/",
+            "name" : "Sentinel Jobs"
          },
          {
-            "website" : "https://metacpan.org/pod/Catalyst::Manual::Intro",
-            "name" : "Catalyst Manual Intro"
+            "name" : "Indeed",
+            "website" : "http://www.indeed.co.uk/"
          },
          {
-            "website" : "https://metacpan.org/pod/Catalyst::Manual::Tutorial",
-            "name" : "Catalyst Manual Tutorial"
-         },
-         {
-            "name" : "Template Toolkit",
-            "website" : "http://www.template-toolkit.org/docs/index.html"
-         },
-         {
-            "name" : "Git Hub",
-            "website" : "https://github.com/"
-         },
-         {
-            "name" : "Perl Reddit",
-            "website" : "https://www.reddit.com/r/perl/"
-         }
-      ],
-      "Music" : [
-         {
-            "name" : "Dime",
-            "website" : "http://www.dimeadozen.org/account-login.php"
-         },
-         {
-            "name" : "Spotify",
-            "website" : "https://play.spotify.com/browse"
-         },
-         {
-            "name" : "You Tube",
-            "website" : "http://www.youtube.com/"
-         },
-         {
-            "name" : "Dreamscape Radio",
-            "website" : "http://www.dreamscaperadio.nl/"
-         },
-         {
-            "name" : "DPRP",
-            "website" : "http://www.dprp.net/"
-         },
-         {
-            "website" : "http://www.ioearth.com/#!news/c20tl",
-            "name" : "Wicked Snakes"
-         }
-      ],
-      "Other Stuff" : [
-         {
-            "name" : "Lottery",
-            "website" : "https://www.national-lottery.co.uk/player/p/results/lotto.ftl"
-         },
-         {
-            "website" : "https://www.facebook.com/",
-            "name" : "Facebook"
-         },
-         {
-            "website" : "http://www.amazon.co.uk",
-            "name" : "Amazon"
-         },
-         {
-            "name" : "Google Maps",
-            "website" : "https://www.google.co.uk/maps"
-         },
-         {
-            "name" : "Twitter",
-            "website" : "https://twitter.com/following"
-         },
-         {
-            "website" : "https://www.linkedin.com/home",
-            "name" : "LinkedIn"
-         },
-         {
-            "name" : "Google Calendar",
-            "website" : "https://www.google.com/calendar/render#h"
-         },
-         {
-            "name" : "Sky Sports Super 6",
-            "website" : "https://super6.skysports.com/"
-         },
-         {
-            "name" : "Fantasy Football",
-            "website" : "http://fantasy.premierleague.com/"
-         },
-         {
-            "name" : "Football Data",
-            "website" : "http://www.football-data.co.uk/englandm.php"
-         }
-      ],
-      "Mine" : [
-         {
-            "name" : "My Job Applications",
-            "website" : "http://localhost/MyJobApplications/jobApps/home"
-         },
-         {
-            "website" : "http://localhost/OddsCalculator/index.php",
-            "name" : "Odds Calculator"
-         },
-         {
-            "name" : "Lottery",
-            "website" : "http://localhost/lottery/index.php"
-         },
-         {
-            "website" : "http://localhost/Tutorials/mycalendar/display",
-            "name" : "My Calendar"
-         },
-         {
-            "name" : "Perl My Job Applications",
-            "website" : "http://localhost:5000/myjobapplications/myjobapplications"
-         },
-         {
-            "name" : "Perl Lottery",
-            "website" : "http://localhost:5000/lottery/lottery"
-         },
-         {
-            "name" : "Perl Odds Calc",
-            "website" : "http://localhost:5000/oddscalc/oddscalc/home"
-         },
-         {
-            "website" : "http://localhost:5000/myspeeddial/myspeeddial/home",
-            "name" : "Perl Speed Dial"
-         },
-         {
-            "website" : "http://localhost:5000/pools/pools/home",
-            "name" : "Perl Pools"
-         }
-      ],
-      "bollox" : [
-         {
-            "website" : "geddy.lee",
-            "name" : "Rush"
-         },
-         {
-            "website" : "hogarth.com",
-            "name" : "Marillion"
+            "name" : "Direct Gov",
+            "website" : "https://jobsearch.direct.gov.uk/register.aspx?redirect=http%3a%2f%2fjobsearch.direct.gov.uk%2fhome.aspx"
          }
       ],
       "News" : [
@@ -172,62 +43,128 @@
             "name" : "Feed Reader"
          }
       ],
-      "Job Sites" : [
-         {
-            "website" : "http://jobs.stokesentinel.co.uk/",
-            "name" : "Sentinel Jobs"
-         },
-         {
-            "website" : "http://www.indeed.co.uk/",
-            "name" : "Indeed"
-         },
-         {
-            "website" : "https://jobsearch.direct.gov.uk/register.aspx?redirect=http%3a%2f%2fjobsearch.direct.gov.uk%2fhome.aspx",
-            "name" : "Direct Gov"
-         }
-      ],
-      "TV" : [
-         {
-            "name" : "BBC iplayer",
-            "website" : "http://www.bbc.co.uk/iplayer"
-         },
-         {
-            "name" : "ITV Player",
-            "website" : "https://www.itv.com/itvplayer/"
-         },
-         {
-            "website" : "https://skyid.sky.com/signin/sports?successUrl=http%3A%2F%2Fwww1.skysports.com%2Fwatch",
-            "name" : "Sky Sports"
-         },
-         {
-            "name" : "Sky Go",
-            "website" : "http://go.sky.com/vod/page/tvListing.do"
-         },
-         {
-            "name" : "Radio Times",
-            "website" : "http://www.radiotimes.com/tv/tv-listings"
-         },
-         {
-            "website" : "http://www.tvguide.co.uk/tv-stream/?ch=channel+5",
-            "name" : "Channel 5"
-         }
-      ],
       "Finance" : [
          {
-            "name" : "Shareview",
-            "website" : "https://portfolio.shareview.co.uk/7/Portfolio/Default/en/Anonymous/Pages/Login.aspx"
+            "website" : "https://portfolio.shareview.co.uk/7/Portfolio/Default/en/Anonymous/Pages/Login.aspx",
+            "name" : "Shareview"
          },
          {
-            "website" : "https://epa.towerswatson.com/doc/RWE/login.htm",
-            "name" : "RWE pension"
+            "name" : "RWE pension",
+            "website" : "https://epa.towerswatson.com/doc/RWE/login.htm"
          },
          {
-            "website" : "https://www10.landg.com/SAuthGateWeb/login.html?entryPoint=/MyLandG/",
-            "name" : "Co-op pension"
+            "name" : "Co-op pension",
+            "website" : "https://www10.landg.com/SAuthGateWeb/login.html?entryPoint=/MyLandG/"
          },
          {
             "website" : "",
             "name" : "Friends Life pension"
+         }
+      ],
+      "Other Stuff" : [
+         {
+            "name" : "Lottery",
+            "website" : "https://www.national-lottery.co.uk/player/p/results/lotto.ftl"
+         },
+         {
+            "name" : "Facebook",
+            "website" : "https://www.facebook.com/"
+         },
+         {
+            "name" : "Amazon",
+            "website" : "http://www.amazon.co.uk"
+         },
+         {
+            "name" : "Google Maps",
+            "website" : "https://www.google.co.uk/maps"
+         },
+         {
+            "website" : "https://twitter.com/following",
+            "name" : "Twitter"
+         },
+         {
+            "website" : "https://www.linkedin.com/home",
+            "name" : "LinkedIn"
+         },
+         {
+            "name" : "Google Calendar",
+            "website" : "https://www.google.com/calendar/render#h"
+         },
+         {
+            "name" : "Sky Sports Super 6",
+            "website" : "https://super6.skysports.com/"
+         },
+         {
+            "website" : "http://fantasy.premierleague.com/",
+            "name" : "Fantasy Football"
+         },
+         {
+            "name" : "Football Data",
+            "website" : "http://www.football-data.co.uk/englandm.php"
+         }
+      ],
+      "Music" : [
+         {
+            "website" : "http://www.dimeadozen.org/account-login.php",
+            "name" : "Dime"
+         },
+         {
+            "name" : "Spotify",
+            "website" : "https://play.spotify.com/browse"
+         },
+         {
+            "website" : "http://www.youtube.com/",
+            "name" : "You Tube"
+         },
+         {
+            "name" : "Dreamscape Radio",
+            "website" : "http://www.dreamscaperadio.nl/"
+         },
+         {
+            "website" : "http://www.dprp.net/",
+            "name" : "DPRP"
+         },
+         {
+            "website" : "http://www.ioearth.com/#!news/c20tl",
+            "name" : "Wicked Snakes"
+         }
+      ],
+      "Mine" : [
+         {
+            "website" : "http://localhost/MyJobApplications/jobApps/home",
+            "name" : "My Job Applications"
+         },
+         {
+            "website" : "http://localhost/OddsCalculator/index.php",
+            "name" : "Odds Calculator"
+         },
+         {
+            "website" : "http://localhost/lottery/index.php",
+            "name" : "Lottery"
+         },
+         {
+            "website" : "http://localhost/Tutorials/mycalendar/display",
+            "name" : "My Calendar"
+         },
+         {
+            "website" : "http://localhost:5000/myjobapplications/myjobapplications",
+            "name" : "Perl My Job Applications"
+         },
+         {
+            "name" : "Perl Lottery",
+            "website" : "http://localhost:5000/lottery/lottery"
+         },
+         {
+            "name" : "Perl Odds Calc",
+            "website" : "http://localhost:5000/oddscalc/oddscalc/home"
+         },
+         {
+            "name" : "Perl Speed Dial",
+            "website" : "http://localhost:5000/myspeeddial/myspeeddial/home"
+         },
+         {
+            "website" : "http://localhost:5000/pools/pools/home",
+            "name" : "Perl Pools"
          }
       ],
       "Banks" : [
@@ -236,8 +173,8 @@
             "name" : "Santander"
          },
          {
-            "name" : "Co-op Bank",
-            "website" : "http://www.co-operativebank.co.uk/"
+            "website" : "http://www.co-operativebank.co.uk/",
+            "name" : "Co-op Bank"
          },
          {
             "website" : "https://online.tsb.co.uk/personal/logon/login.jsp",
@@ -256,16 +193,68 @@
             "website" : "https://www.pofssavecredit.co.uk/POFS-NPS/do/login?methodname=displayPresignin"
          },
          {
-            "name" : "Marks and Spencer Bank",
-            "website" : "http://bank.marksandspencer.com/banking/internet-banking/overview/"
+            "website" : "http://bank.marksandspencer.com/banking/internet-banking/overview/",
+            "name" : "Marks and Spencer Bank"
          },
          {
-            "name" : "Bank Of Scotland",
-            "website" : "https://online.bankofscotland.co.uk/personal/logon/login.jsp"
+            "website" : "https://online.bankofscotland.co.uk/personal/logon/login.jsp",
+            "name" : "Bank Of Scotland"
          },
          {
-            "name" : "Nationwide",
-            "website" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login"
+            "website" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login",
+            "name" : "Nationwide"
+         }
+      ],
+      "Programming" : [
+         {
+            "name" : "Perl Docs",
+            "website" : "http://perldoc.perl.org/index.html"
+         },
+         {
+            "website" : "https://metacpan.org/pod/Catalyst::Manual::Intro",
+            "name" : "Catalyst Manual Intro"
+         },
+         {
+            "name" : "Catalyst Manual Tutorial",
+            "website" : "https://metacpan.org/pod/Catalyst::Manual::Tutorial"
+         },
+         {
+            "name" : "Template Toolkit",
+            "website" : "http://www.template-toolkit.org/docs/index.html"
+         },
+         {
+            "name" : "Git Hub",
+            "website" : "https://github.com/"
+         },
+         {
+            "website" : "https://www.reddit.com/r/perl/",
+            "name" : "Perl Reddit"
+         }
+      ],
+      "TV" : [
+         {
+            "name" : "BBC iplayer",
+            "website" : "http://www.bbc.co.uk/iplayer"
+         },
+         {
+            "name" : "ITV Player",
+            "website" : "https://www.itv.com/itvplayer/"
+         },
+         {
+            "name" : "Sky Sports",
+            "website" : "https://skyid.sky.com/signin/sports?successUrl=http%3A%2F%2Fwww1.skysports.com%2Fwatch"
+         },
+         {
+            "name" : "Sky Go",
+            "website" : "http://go.sky.com/vod/page/tvListing.do"
+         },
+         {
+            "website" : "http://www.radiotimes.com/tv/tv-listings",
+            "name" : "Radio Times"
+         },
+         {
+            "name" : "Channel 5",
+            "website" : "http://www.tvguide.co.uk/tv-stream/?ch=channel+5"
          }
       ]
    }

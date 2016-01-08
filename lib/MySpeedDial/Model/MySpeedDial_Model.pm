@@ -53,13 +53,11 @@ sub get_website {
 sub edit_site {
 	my ($self, $params) = @_;
 	my $search = $params->{'item'};
-    my (@headings) = @{ $speed_dial->{headings} };
-
-    for (@headings) {
-        my $array = \@{ $speed_dial->{data}->{$_} };
-        for my $site (@$array) {
-			$site->{website} = $params->{website} if $site->{name} eq $search;
-        }
+	my $heading = $params->{'heading'};
+    
+	my $array = \@{ $speed_dial->{data}->{$heading} };
+	for my $site (@$array) {
+		$site->{website} = $params->{website} if $site->{name} eq $search;
     }
 
 	write_json ($json_file, $speed_dial);

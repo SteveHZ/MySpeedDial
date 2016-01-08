@@ -1,12 +1,16 @@
 [% META title = 'My Perl Speed Dial - EditJSON' -%]
 
 <form action = "[% c.uri_for (c.controller.action_for ('do_editjson') ) %] ">
+	
+	<h3>[% heading %] </h3>
 
 	<label for="item"><h5>Item :</h5></label>
 	<input type="text" name = "item" id="item" value ="[% item %]"/>
 
 	<label for="website"><h5>Website :</h5></label>
 	<input type="text" name = "website" id="website" value = "[% website %]"/>
+
+	<input type="hidden" name = "heading" id="heading" value ="[% heading %]"/>
 
 	<br/><br/>
 
